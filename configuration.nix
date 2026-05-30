@@ -44,6 +44,9 @@
   # Enable dbus
   services.dbus.enable = true;
 
+  # Enable openssh
+  services.openssh.enable = true;
+
   # Enable Polkit
   security.polkit.enable = true;
 
