@@ -60,13 +60,13 @@
       ll = "ls -l";
       snvim = "sudo nvim";
       svim = "sudo vim";
-      nx = "cd /etc/nixos"; # cd to nixos conf folder
-      nixre = "sudo nixos-rebuild switch";
+      nx = "cd ~/nixos-config/"; # cd to nixos conf folder
+      nixre = "sudo nixos-rebuild switch --flake ~/nixos-config#shin6";
       neru = "systemctl suspend";
-      nixconf = "sudo vim /etc/nixos/configuration.nix";
-      hmconf = "sudo vim /etc/nixos/home/home.nix";
-      flakeconf = "sudo vim /etc/nixos/flake.nix";
-      hmre = "home-manager switch --flake /etc/nixos#shin6"; # rebuild home-manager
+      nixconf = "nvim ~/nixos-config/configuration.nix";
+      hmconf = "nvim ~/nixos-config/home/home.nix";
+      flakeconf = "nvim ~/nixos-config/flake.nix";
+      hmre = "home-manager switch --flake ~/nixos-config#shin6"; # rebuild home-manager
       
     };
   };

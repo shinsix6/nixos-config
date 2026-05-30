@@ -25,7 +25,7 @@
   };
 
   outputs = {self, nixpkgs, home-manager, niri, ...}@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.shin6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [
 	# Impor previos nixos config
