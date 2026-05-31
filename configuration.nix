@@ -91,11 +91,11 @@
   # hardware
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver # i5 (Skylake/Kaby Lake)
-      intel-vaapi-driver # Legacy support for older apps
-      libvdpau-va-gl     # Helps bridge some video apps
-    ];
+    # extraPackages = with pkgs; [
+    #   intel-media-driver # i5 (Skylake/Kaby Lake)
+    #   intel-vaapi-driver # Legacy support for older apps
+    #   libvdpau-va-gl     # Helps bridge some video apps
+    # ];
   };
 
   # Enable graphics
@@ -182,11 +182,11 @@
   # boot.kernelPackages = pkgs.linuxPackages_6_6;
 
   # Kernel param
-  boot.kernelParams = [ 
-      "i915.enable_psr=0" 
-      "i915.enable_dc=0"
-  ];
-  boot.initrd.kernelModules = [ "i915" ];
+  # boot.kernelParams = [ 
+  #     "i915.enable_psr=0" 
+  #     "i915.enable_dc=0"
+  # ];
+  # boot.initrd.kernelModules = [ "i915" ];
 
   # Postgresql enable
   services.postgresql.enable = true;

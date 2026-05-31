@@ -22,6 +22,8 @@
 
     prefer-no-csd = true;
 
+    outputs."eDP-1".scale = 1.1;
+
     input = {
       touchpad = {
 	click-method = "button-areas";

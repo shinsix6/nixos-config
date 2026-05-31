@@ -43,6 +43,7 @@
     feh
     obs-studio
     mpv
+    filezilla
   ];
 
   # Configurations for pkgs

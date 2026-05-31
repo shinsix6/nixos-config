@@ -2,8 +2,8 @@
 	"Mod+Shift+Slash".action = { show-hotkey-overlay = { }; };
 
         "Mod+T" = {
-          hotkey-overlay.title = "Open a Terminal: ghostty";
-          action = { spawn = [ "ghostty" ]; };
+          hotkey-overlay.title = "Open a Terminal: kitty";
+          action = { spawn = [ "kitty" ]; };
         };
 
         "Mod+D" = {
