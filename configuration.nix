@@ -38,6 +38,21 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # Tur off keyboard backlight when sleeping (Lenovo s540)
+  systemd.services."kbd-backlight-off-sleep" = {
+  wantedBy = [ "sleep.target" ];
+
+  serviceConfig = {
+    Type = "oneshot";
+  };
+
+  script = ''
+    if [ -e /sys/class/leds/*kbd_backlight*/brightness ]; then
+      echo 0 > /sys/class/leds/*kbd_backlight*/brightness || true
+    fi
+  '';
+};
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -103,8 +118,8 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+    layout = "jp";
+    variant = "OADG109A";
   };
 
   # Enable CUPS to print documents.
