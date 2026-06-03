@@ -190,18 +190,14 @@
   };
 
   # GPU and CPU
-  hardware.cpu.intel.updateMicrocode = true;
+  hardware.cpu.amd.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;
 
   # Kernel ver
-  # boot.kernelPackages = pkgs.linuxPackages_6_6;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Kernel param
-  # boot.kernelParams = [ 
-  #     "i915.enable_psr=0" 
-  #     "i915.enable_dc=0"
-  # ];
-  # boot.initrd.kernelModules = [ "i915" ];
+  boot.kernelParams = [ "mem_sleep_default=deep" ];
 
   # Postgresql enable
   services.postgresql.enable = true;
