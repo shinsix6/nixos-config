@@ -167,7 +167,7 @@
     isNormalUser = true;
     shell = pkgs.fish;
     description = "shin6";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" ];
     packages = with pkgs; [
     #  thunderbird
     ];
