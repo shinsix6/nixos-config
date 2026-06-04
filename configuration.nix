@@ -177,6 +177,12 @@
   nix.settings.allowed-users = [ "root" "shin6" ];
   nix.settings.trusted-users = [ "root" "shin6" ];
   
+  # Limit cpu when building
+  nix.settings = {
+    max-jobs = 2;
+    cores = 2;
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -188,6 +194,9 @@
     enable = true;
     package = pkgs.mariadb;
   };
+
+  # Enable Podman
+  virtualisation.podman.enable = true;
 
   # GPU and CPU
   hardware.cpu.amd.updateMicrocode = true;
