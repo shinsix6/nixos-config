@@ -7,6 +7,12 @@
     
     niri.url = "github:sodiboo/niri-flake";
 
+    # SFMono w/ patches input
+    sf-mono-liga-src = {
+      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
+      flake = false;
+    };
+
     # quickshell = {
     #   url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -24,12 +30,13 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, niri, ...}@inputs: {
+  outputs = {self, nixpkgs, home-manager, niri, sf-mono-liga-src, ...}@inputs: {
     nixosConfigurations.shin6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [
 	# Impor previos nixos config
 	./configuration.nix
+	./core/fonts.nix
       ];
     };
 

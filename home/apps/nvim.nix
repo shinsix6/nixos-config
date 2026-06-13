@@ -240,6 +240,11 @@
 	vim.opt.number = true
 	vim.opt.relativenumber = true
 
+	-- tab space 
+	vim.opt.tabstop = 4
+	vim.opt.shiftwidth = 4
+	vim.opt.expandtab = true
+
 	-- colorscheme
 	vim.cmd("colorscheme habamax")
 

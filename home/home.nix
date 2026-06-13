@@ -44,6 +44,8 @@
     obs-studio
     mpv
     filezilla
+    quickshell
+    nh
   ];
 
   # Configurations for pkgs

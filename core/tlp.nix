@@ -16,11 +16,9 @@
 	  # NVME deep sleep 0 or 1
 	  NVME_APST_ON_BAT = 0;
 
-	  # Dual Battery Protection
-	  START_CHARGE_THRESH_BAT0 = 85;
-	  STOP_CHARGE_THRESH_BAT0 = 90;
-	  START_CHARGE_THRESH_BAT1 = 85;
-	  STOP_CHARGE_THRESH_BAT1 = 90;
+	  # Ideapad Battery Protection
+	  START_CHARGE_THRESH_BAT1 = 0;
+	  STOP_CHARGE_THRESH_BAT1 = 1;
 
 	  PLATFORM_PROFILE_ON_BAT = "low-power";
 	  PLATFORM_PROFILE_ON_AC = "low-power";

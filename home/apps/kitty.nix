@@ -13,7 +13,7 @@ in
   programs.kitty = {
     enable = true;
     settings = {
-      font_size = 11;
+      font_size = 10;
       background = colors.bg;
       foreground = colors.fg;
       hide_window_decoration = true;
