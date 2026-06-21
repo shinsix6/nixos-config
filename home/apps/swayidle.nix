@@ -10,7 +10,7 @@
     display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
   in
   {
-    enable = true;
+    enable = false;
     timeouts = [
   
       {

@@ -47,45 +47,45 @@
 
         # Plugins
         plugins = with pkgs.vimPlugins; [
-	  lazy-nvim
-	  {
-	    name = "telescope.nvim";
-	    path = telescope-nvim;
-	  }
-	  plenary-nvim
+          lazy-nvim
+          {
+            name = "telescope.nvim";
+            path = telescope-nvim;
+          }
+          plenary-nvim
 
-	  # Core
-	  plenary-nvim
+          # Core
+          plenary-nvim
 
-	  # UI
-	  lualine-nvim
-	  bufferline-nvim
-	  which-key-nvim
+          # UI
+          lualine-nvim
+          bufferline-nvim
+          which-key-nvim
 
-	  # LSP / completion
-	  nvim-lspconfig
-	  {
-            name = "blink.cmp";
-	    path = blink-cmp;
-	  }
-	  
-	  # Treesitter
-	  nvim-treesitter
+          # LSP / completion
+          nvim-lspconfig
+          {
+                name = "blink.cmp";
+            path = blink-cmp;
+          }
+          
+          # Treesitter
+          nvim-treesitter
 
-	  # File explorer
-	  neo-tree-nvim
-	  nui-nvim
+          # File explorer
+          neo-tree-nvim
+          nui-nvim
 
-	  # Git
-	  gitsigns-nvim
+          # Git
+          gitsigns-nvim
 
-	  alpha-nvim
-	  
-	  {
-	    name = "mini.pairs";
-	    path = mini-pairs;
-	  }
-	  indent-blankline-nvim
+          alpha-nvim
+          
+          {
+            name = "mini.pairs";
+            path = mini-pairs;
+          }
+          indent-blankline-nvim
 
 
           # When a plugin's name in nixpkgs doesn't match what Lazy expects,
@@ -233,6 +233,18 @@
 
 	    -- Utils
 	    { "nvim-lua/plenary.nvim" },
+
+        {
+          "catppuccin/nvim",
+          name = "catppuccin",
+          priority = 1000, -- Tells Lazy to load this spec immediately on startup
+          config = function()
+            require("catppuccin").setup({
+              transparent_background = true,
+            })
+            vim.cmd.colorscheme("catppuccin")
+          end,
+        },
 	  },
 	})
 
@@ -246,7 +258,7 @@
 	vim.opt.expandtab = true
 
 	-- colorscheme
-	vim.cmd("colorscheme habamax")
+	vim.cmd("colorscheme catppuccin")
 
 	-- =====================
 	-- LSP (Neovim 0.11 way)

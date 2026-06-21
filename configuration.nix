@@ -71,7 +71,10 @@
   programs.labwc.enable = true;
 
   # Enable niri
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = inputs.niri.packages.${pkgs.system}.niri-unstable;
+  };
   services.xserver.displayManager.startx.enable = true;
   
   # Enable greetd
@@ -99,6 +102,14 @@
     ];
   };
  
+  # nh clean
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/shin6/nixos-config/";
+  };
+
   # environment.sessionVariables = {
   #   XDG_CURRENT_DESKTOP = "niri";
   # };  
@@ -175,7 +186,10 @@
 
   # Allowed-user
   nix.settings.allowed-users = [ "root" "shin6" ];
-  nix.settings.trusted-users = [ "root" "shin6" ];
+  nix.settings.trusted-users = [ "root" "shin6" "@wheel" ];
+  nix.settings = {
+    accept-flake-config = true;
+  };
   
   # Limit cpu when building
   nix.settings = {
@@ -245,6 +259,7 @@
    xorg.xinit
    xorg.libxcb
    xorg.xcbutilcursor
+   inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 
    # development
    cmake

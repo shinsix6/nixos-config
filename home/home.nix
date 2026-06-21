@@ -7,7 +7,6 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    inputs.niri.homeModules.niri
     ./niri.nix
     ./niri/autostart.nix
     ./cursor.nix
@@ -19,7 +18,15 @@
     ./apps/swayidle.nix
     ./apps/ghostty.nix
     ./apps/vscode.nix
+    ./apps/noctalia.nix
   ];
+
+  # Insecure
+  nixpkgs.config = {
+    permittedInsecurePackages = [
+      "electron-39.8.10"
+    ];
+  };
 
   # Packages that will be installed in the user profile.
   home.packages = with pkgs; [
@@ -44,8 +51,12 @@
     obs-studio
     mpv
     filezilla
-    quickshell
+    # quickshell
     nh
+    webcord
+    foliate
+    qbittorrent
+    dict
   ];
 
   # Configurations for pkgs
@@ -69,8 +80,10 @@
       nixconf = "nvim ~/nixos-config/configuration.nix";
       hmconf = "nvim ~/nixos-config/home/home.nix";
       flakeconf = "nvim ~/nixos-config/flake.nix";
-      hmre = "home-manager switch --flake ~/nixos-config#shin6"; # rebuild home-manager
-      
+      hmre = "home-manager switch --flake ~/nixos-config#shin6";
+      update-nh = "nh os switch -u ~/nixos-config#shin6"; # update flake and rebuild
+      sys-nh = "nh os switch ~/nixos-config#shin6"; # rebuild os
+      hm-nh = "nh home switch ~/nixos-config"; # rebuild home-manager
     };
   };
 

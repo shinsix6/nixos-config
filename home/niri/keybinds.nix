@@ -7,18 +7,33 @@
         };
 
         "Mod+D" = {
-          hotkey-overlay.title = "Run an Application: fuzzel";
+          hotkey-overlay.title = "Run an App Launcher";
           action = { spawn = [ "fuzzel" ]; };
         };
 
+        "Mod+Shift+C" = {
+          hotkey-overlay.title = "Open Clipboard";
+          action = { spawn-sh = [ "noctalia msg panel-toggle clipboard" ]; };
+        };
+
+        "Mod+P" = {
+          hotkey-overlay.title = "Open Control Panel: Noctalia";
+          action = { spawn-sh = [ "noctalia msg panel-toggle control-center" ]; };
+        };
+
+        "Mod+W" = {
+          hotkey-overlay.title = "Open Control Panel: Wallpaper";
+          action = { spawn-sh = [ "noctalia msg panel-toggle wallpaper" ]; };
+        };
+
         "Super+Alt+L" = {
-          hotkey-overlay.title = "Lock the Screen: swaylock";
-          action = { spawn = [ "swaylock" ]; };
+          hotkey-overlay.title = "Lock the Screen";
+          action = { spawn-sh = [ "noctalia msg session lock" ]; };
         };
 
         "Super+Alt+S" = {
           hotkey-overlay.title = "Lock the Screen and sleep: swaylock and sleep";
-          action = { spawn-sh = "swaylock -f & sleep 0.3"; };
+          action = { spawn-sh = "noctalia msg session lock-and-suspend"; };
         };
 
         "XF86AudioRaiseVolume" = {
@@ -197,7 +212,7 @@
         "Mod+V".action = { toggle-window-floating = { }; };
         "Mod+Shift+V".action = { switch-focus-between-floating-and-tiling = { }; };
 
-        "Mod+W".action = { toggle-column-tabbed-display = { }; };
+        # "Mod+W".action = { toggle-column-tabbed-display = { }; };
 
         "Print".action = { screenshot = { }; };
         "Ctrl+Print".action = { screenshot-screen = { }; };
@@ -211,5 +226,5 @@
         "Mod+Shift+E".action = { quit = { }; };
         "Ctrl+Alt+Delete".action = { quit = { }; };
 
-        "Mod+Shift+P".action = { power-off-monitors = { }; };
+        # "Mod+Shift+P".action = { power-off-monitors = { }; };
 }

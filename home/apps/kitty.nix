@@ -18,6 +18,8 @@ in
       foreground = colors.fg;
       hide_window_decoration = true;
       window_padding_width = 5;
+      background_opacity = 0.93;
+      # background_blur = 1;
 
      #colors
      color0 = "#070707"; #black
