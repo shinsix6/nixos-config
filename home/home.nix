@@ -31,7 +31,7 @@
   # Packages that will be installed in the user profile.
   home.packages = with pkgs; [
     nnn
-    neofetch
+    fastfetch
     joplin-desktop
     zed-editor
     wlr-randr
@@ -57,6 +57,9 @@
     foliate
     qbittorrent
     dict
+    stirling-pdf
+    bottles
+    bruno
   ];
 
   # Configurations for pkgs

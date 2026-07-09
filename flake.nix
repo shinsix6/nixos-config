@@ -15,11 +15,11 @@
 
   inputs = {
     # Nix Official Package
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     
     niri = {
         url = "github:sodiboo/niri-flake";
-        inputs.nixpkgs.follows = "nixpkgs";
+        # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri-fork = {
@@ -27,7 +27,7 @@
         # epireyn forking from sodiboo (For background-effec)
         # could be changed to sodiboo later if they updated the niri
         url = "github:epireyn/niri-flake";
-        inputs.nixpkgs.follows = "nixpkgs";
+        # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # niri-pkgs = {
@@ -35,8 +35,8 @@
     # };
     
     noctalia = {
-        url = "github:noctalia-dev/noctalia";
-        inputs.nixpkgs.follows = "nixpkgs";
+        url = "github:noctalia-dev/noctalia/cachix";
+        # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # SFMono w/ patches input
@@ -47,13 +47,13 @@
 
     # home-manager, for user level configuration
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       # for avoid problems caused by different version of nixpkgs
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs = {self, nixpkgs, home-manager, niri, niri-fork, sf-mono-liga-src, noctalia, ...}@inputs: {
+ 
+ outputs = {self, nixpkgs, home-manager, niri, niri-fork, sf-mono-liga-src, noctalia, ...}@inputs: {
     nixosConfigurations.shin6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [

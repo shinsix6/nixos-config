@@ -3,6 +3,9 @@
 {
   programs.neovim = {
     enable = true;
+    
+    withRuby = true;
+    withPython3 = true;
 
     # lsp and tools servers available on $PATH for neovim
     extraPackages = with pkgs; [
@@ -27,15 +30,16 @@
       clang-tools
       phpactor
       gcc
-      nodePackages.typescript-language-server
-      nodePackages.vscode-langservers-extracted
-      nodePackages."@tailwindcss/language-server"
+      javascript-typescript-langserver
+      typescript-language-server
+      vscode-langservers-extracted
+      tailwindcss-language-server
     ];
 
     # Only lazy-nvim itself is loaded as a Neovim plugin
     plugins = with pkgs.vimPlugins; [ lazy-nvim ];
 
-    extraLuaConfig =
+    initLua =
       # lua
       let
         treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
@@ -154,7 +158,7 @@
 	      "nvim-treesitter/nvim-treesitter",
 	      build = false,
 	      config = function()
-		require("nvim-treesitter.configs").setup({
+		require("nvim-treesitter.config").setup({
 		  highlight = { enable = true },
 		})
 	      end,

@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
       ./core/fonts.nix
       ./core/tlp.nix
+      ./core/networkManager.nix
+      ./core/nixld.nix
     ];
 
   # Bootloader.
@@ -53,6 +55,9 @@
   '';
 };
 
+  # Enable upower to get the powermanagement
+  services.upower.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -67,8 +72,8 @@
 
   # Enable the LXQT Desktop Environment.
   # services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.lxqt.enable = true;
-  programs.labwc.enable = true;
+  # services.xserver.desktopManager.lxqt.enable = true;
+  # programs.labwc.enable = true;
 
   # Enable niri
   programs.niri = {

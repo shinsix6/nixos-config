@@ -81,6 +81,21 @@
                 xray = true;
             };
           }
+          {
+            matches = [
+              {
+                app-id="dev.zed.Zed";
+              }
+              {
+                app-id="code";
+              }
+            ];
+            background-effect = {
+                blur = true;
+                xray = true;
+            };
+            draw-border-with-background = false;
+          }
         ];
 
 
@@ -101,6 +116,17 @@
             ];
             place-within-backdrop = true;
           }
+          # {
+          #   matches = [
+          #     {
+          #       namespace = "^noctalia-bar-[^\"]+$";
+          #     }  
+          #   ];
+          #   background-effect = {
+          #       blur = true;
+          #       xray = true;
+          #   };
+          # }
         ];
 
         # Binds

@@ -1,0 +1,61 @@
+2026-07-05 17:26:48,603 INFO s.s.S.SPDFApplication [main] Additional features in jar
+2026-07-05 17:26:48,606 INFO s.s.c.c.ConfigInitializer [main] Current settings file line count: 0
+2026-07-05 17:26:48,611 INFO s.s.c.c.ConfigInitializer [main] Created settings file from template
+2026-07-05 17:26:48,612 INFO s.s.c.c.ConfigInitializer [main] Created custom_settings file: ./configs/custom_settings.yml
+2026-07-05 17:26:48,612 INFO s.s.S.SPDFApplication [main] Settings file: ./configs/settings.yml
+2026-07-05 17:26:48,612 INFO s.s.S.SPDFApplication [main] Custom settings file: ./configs/custom_settings.yml
+2026-07-05 17:26:49,607 INFO s.s.S.SPDFApplication [main] Starting SPDFApplication v1.5.0 using Java 21.0.10 with PID 71513 (/nix/store/xjmb13z31h8sy64g6h8g46lckmfw2pxh-stirling-pdf-1.5.0/share/stirling-pdf/Stirling-PDF.jar started by shin6 in /home/shin6/nixos-config/home)
+2026-07-05 17:26:49,609 INFO s.s.S.SPDFApplication [main] The following 1 profile is active: "security"
+2026-07-05 17:26:56,960 INFO s.s.p.s.c.DatabaseConfig [main] Using default H2 database
+2026-07-05 17:27:02,351 INFO s.s.c.c.TempFileConfiguration [main] Created temporary directory: /tmp/stirling-pdf
+2026-07-05 17:27:02,436 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: gs - Disabling group: Ghostscript (Affected features: Replace Invert PDF, Repair, Compress PDF, Vector To PDF, PDF To Vector, Crop)
+2026-07-05 17:27:02,464 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: ocrmypdf - Disabling group: OCRmyPDF (Affected features: Ocr PDF)
+2026-07-05 17:27:02,492 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: tesseract - Disabling group: tesseract (Affected features: Ocr PDF)
+2026-07-05 17:27:02,519 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: soffice - Disabling group: LibreOffice (Affected features: File To PDF, PDF To Xml, PDF To Presentation, PDF To Pdfa, PDF To Word, PDF To Rtf, PDF To Html)
+2026-07-05 17:27:02,544 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: qpdf - Disabling group: qpdf (Affected features: Repair, Compress PDF)
+2026-07-05 17:27:02,579 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: weasyprint - Disabling group: Weasyprint (Affected features: Eml To PDF, Markdown To PDF, Url To PDF, Html To PDF)
+2026-07-05 17:27:02,607 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: pdftohtml - Disabling group: Pdftohtml (Affected features: PDF To Html, PDF To Markdown)
+2026-07-05 17:27:02,636 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: unoconvert - Disabling group: Unoconvert (Affected features: File To PDF)
+2026-07-05 17:27:02,667 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: rar - Disabling group: rar (Affected features: PDF To Cbr)
+2026-07-05 17:27:02,725 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: Python - Disabling Python features: File To PDF, Url To PDF, Html To PDF, Extract Image Scans and OpenCV features: Extract Image Scans
+2026-07-05 17:27:02,731 INFO s.s.S.c.EndpointConfiguration [main] Disabled tool groups: Ghostscript, LibreOffice, OCRmyPDF, OpenCV, Pdftohtml, Python, Unoconvert, Weasyprint, qpdf, rar, tesseract (endpoints may have alternative implementations)
+2026-07-05 17:27:02,731 INFO s.s.S.c.EndpointConfiguration [main] Disabled functional groups: enterprise
+2026-07-05 17:27:02,731 INFO s.s.S.c.EndpointConfiguration [main] Total disabled endpoints: 19. Disabled endpoints: crop, eml-to-pdf, extract-image-scans, file-to-pdf, html-to-pdf, ocr-pdf, pdf-to-cbr, pdf-to-html, pdf-to-markdown, pdf-to-pdfa, pdf-to-presentation, pdf-to-rtf, pdf-to-vector, pdf-to-word, pdf-to-xml, repair, replace-invert-pdf, url-to-pdf, vector-to-pdf
+2026-07-05 17:27:03,310 INFO s.s.p.s.s.DatabaseService [main] Source directory does not exist: configs/db/backup
+2026-07-05 17:27:04,297 INFO s.s.c.u.FileMonitor [main] Monitoring directory: ./pipeline/watchedFolders
+2026-07-05 17:27:05,308 INFO s.s.c.s.TempFileCleanupService [main] Created LibreOffice temp directory: /tmp/stirling-pdf/libreoffice
+2026-07-05 17:27:05,308 INFO s.s.c.s.TempFileCleanupService [main] Running in Server-jar mode, using conservative cleanup strategy
+2026-07-05 17:27:05,312 INFO s.s.c.s.TempFileCleanupService [main] Startup cleanup complete. Deleted 0 temporary files/directories
+2026-07-05 17:27:06,536 INFO s.s.p.s.s.DatabaseService [main] Database export completed: configs/backup/db/backup_202607051727.sql
+2026-07-05 17:27:06,537 INFO s.s.p.s.InitialSecuritySetup [main] Default admin user created: admin
+2026-07-05 17:27:06,646 INFO s.s.p.s.s.DatabaseService [main] Database export completed: configs/backup/db/backup_202607051727.sql
+2026-07-05 17:27:06,689 INFO s.s.p.s.s.DatabaseService [main] Database export completed: configs/backup/db/backup_202607051727.sql
+2026-07-05 17:27:06,689 INFO s.s.p.s.InitialSecuritySetup [main] Internal API user created: STIRLING-PDF-BACKEND-API-USER
+2026-07-05 17:27:09,876 INFO s.s.c.s.JobQueue [main] Starting JobQueue lifecycle
+2026-07-05 17:27:09,942 INFO s.s.S.SPDFApplication [main] Started SPDFApplication in 21.326 seconds (process running for 22.911)
+2026-07-05 17:27:09,957 INFO s.s.S.SPDFApplication [main] Stirling-PDF Started.
+2026-07-05 17:27:09,957 WARN s.s.c.u.FileMonitor [scheduling-1] not monitoring any directory, even the root directory itself: ./pipeline/watchedFolders
+2026-07-05 17:27:09,957 INFO s.s.S.SPDFApplication [main] Navigate to http://localhost:8080/
+2026-07-05 17:27:09,962 INFO s.s.S.c.a.p.PipelineDirectoryProcessor [scheduling-1] Created directory: /home/shin6/nixos-config/home/./pipeline/watchedFolders
+2026-07-05 17:27:09,968 INFO s.s.c.s.TempFileCleanupService [scheduling-1] Running scheduled temporary file cleanup
+2026-07-05 17:27:09,969 INFO s.s.c.u.TempFileManager [scheduling-1] Cleaned up 0 old temporary files
+2026-07-05 17:27:09,969 INFO s.s.c.s.TempFileCleanupService [scheduling-1] Cleaned up 0 registered temporary files
+2026-07-05 17:27:14,938 WARN s.s.c.u.FileMonitor [scheduling-1] not monitoring any directory, even the root directory itself: ./pipeline/watchedFolders
+2026-07-05 17:27:14,941 INFO s.s.c.u.FileMonitor [scheduling-1] Registered directory: ./pipeline/watchedFolders
+2026-07-05 17:28:53,425 INFO s.s.S.s.AttachmentService [qtp1479645341-64] Added attachment: e-Statement_XXXXXXXXX5384_01 Mar 2026-25 Jun 2026.pdf (99462 bytes)
+2026-07-05 17:28:53,427 INFO s.s.c.u.AttachmentUtils [qtp1479645341-64] Set PDF PageMode to UseAttachments to automatically show attachments pane
+2026-07-05 17:29:35,938 WARN o.a.p.p.f.PDType1Font [qtp1479645341-63] Using fallback font LiberationSans for Helvetica
+2026-07-05 17:29:36,124 WARN o.a.p.p.f.PDType1Font [qtp1479645341-63] Using fallback font LiberationSans for Helvetica
+2026-07-05 17:29:36,149 WARN o.a.p.p.f.PDType1Font [qtp1479645341-63] Using fallback font LiberationSans for Helvetica
+2026-07-05 17:32:16,360 INFO s.s.S.s.AttachmentService [qtp1479645341-34] Added attachment: e-Statement_XXXXXXXXX5384_01 Mar 2026-25 Jun 2026.pdf (99462 bytes)
+2026-07-05 17:32:16,360 INFO s.s.c.u.AttachmentUtils [qtp1479645341-34] Set PDF PageMode to UseAttachments to automatically show attachments pane
+2026-07-05 17:34:30,573 INFO s.s.c.u.ExceptionUtils [qtp1479645341-61] PDF security issue during PDF loading from bytes: Cannot decrypt PDF, the password is incorrect
+2026-07-05 17:34:30,587 WARN o.e.j.e.s.ServletChannel [qtp1479645341-61] handleException /api/v1/general/extract-bookmarks java.io.IOException: The PDF Document is passworded and either the password was not provided or was incorrect
+2026-07-05 17:41:38,217 INFO s.s.c.c.TempFileShutdownHook [Thread-10] Shutdown cleanup complete. Deleted 0 temporary files/directories
+2026-07-05 17:41:38,234 INFO s.s.c.s.JobQueue [SpringApplicationShutdownHook] Stopping JobQueue lifecycle
+2026-07-05 17:41:38,234 INFO s.s.c.s.JobQueue [SpringApplicationShutdownHook] Shutting down job queue
+2026-07-05 17:41:38,235 INFO s.s.c.s.JobQueue [SpringApplicationShutdownHook] Job queue shutdown complete. Stats: total=0, rejected=0
+2026-07-05 17:41:38,250 INFO s.s.c.c.TempFileShutdownHook [SpringApplicationShutdownHook] Application shutting down, cleaning up temporary files
+2026-07-05 17:41:38,250 INFO s.s.c.c.TempFileShutdownHook [SpringApplicationShutdownHook] Shutdown cleanup complete. Deleted 0 temporary files/directories
+2026-07-05 17:41:38,252 INFO s.s.c.s.ResourceMonitor [SpringApplicationShutdownHook] Shutting down resource monitoring
+2026-07-05 17:41:38,253 INFO s.s.c.s.TaskManager [SpringApplicationShutdownHook] Shutting down job result cleanup executor

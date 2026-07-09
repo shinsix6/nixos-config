@@ -10,7 +10,7 @@
         "--enable-features=WaylandWindowDecorations"
       ];
     });
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       vscjava.vscode-java-pack
     ];
   };
