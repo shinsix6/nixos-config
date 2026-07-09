@@ -116,17 +116,17 @@
             ];
             place-within-backdrop = true;
           }
-          # {
-          #   matches = [
-          #     {
-          #       namespace = "^noctalia-bar-[^\"]+$";
-          #     }  
-          #   ];
-          #   background-effect = {
-          #       blur = true;
-          #       xray = true;
-          #   };
-          # }
+          {
+            matches = [
+              {
+                namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$";
+              }  
+            ];
+            background-effect = {
+                blur = false;
+                xray = false;
+            };
+          }
         ];
 
         # Binds

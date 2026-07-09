@@ -19,6 +19,7 @@
     ./apps/ghostty.nix
     ./apps/vscode.nix
     ./apps/noctalia.nix
+    ./apps/fish.nix
   ];
 
   # Insecure
@@ -60,36 +61,9 @@
     stirling-pdf
     bottles
     bruno
+    starship
   ];
-
-  # Configurations for pkgs
   
-  # fish shell config
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set -g fish_greeting
-    '';
-
-    # Set alias
-    shellAliases = {
-      la = "ls -a";
-      ll = "ls -l";
-      snvim = "sudo nvim";
-      svim = "sudo vim";
-      nx = "cd ~/nixos-config/"; # cd to nixos conf folder
-      nixre = "sudo nixos-rebuild switch --flake ~/nixos-config#shin6";
-      neru = "systemctl suspend";
-      nixconf = "nvim ~/nixos-config/configuration.nix";
-      hmconf = "nvim ~/nixos-config/home/home.nix";
-      flakeconf = "nvim ~/nixos-config/flake.nix";
-      hmre = "home-manager switch --flake ~/nixos-config#shin6";
-      update-nh = "nh os switch -u ~/nixos-config#shin6"; # update flake and rebuild
-      sys-nh = "nh os switch ~/nixos-config#shin6"; # rebuild os
-      hm-nh = "nh home switch ~/nixos-config"; # rebuild home-manager
-    };
-  };
-
   # Home manage Version
   home.stateVersion = "25.11";
 }

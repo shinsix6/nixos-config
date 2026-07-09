@@ -54,6 +54,9 @@
     fi
   '';
 };
+ 
+  # Disable man cache 
+  documentation.man.generateCaches = false;
 
   # Enable upower to get the powermanagement
   services.upower.enable = true;
