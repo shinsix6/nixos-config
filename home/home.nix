@@ -62,6 +62,7 @@
     bottles
     bruno
     starship
+    tree
   ];
   
   # Home manage Version

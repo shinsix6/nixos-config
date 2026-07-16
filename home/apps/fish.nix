@@ -23,6 +23,8 @@
       update-nh = "nh os switch -u ~/nixos-config#shin6"; # update flake and rebuild
       sys-nh = "nh os switch ~/nixos-config#shin6"; # rebuild os
       hm-nh = "nh home switch ~/nixos-config"; # rebuild home-manager
+      winmount = "sudo mount -t ntfs /dev/nvme0n1p3 /mnt/windows/"; # mount windows
+      slixxmount = "sudo mount -t ntfs /dev/nvme0n1p7 /mnt/slixx"; # mount slixx disk
     };
   };
 
@@ -33,7 +35,7 @@
     settings = {
       format = ''$username$directory$git_branch$git_status$character'';
 
-      add_newline = true;
+      add_newline = false;
       
       # individual configuration 
       username = {
