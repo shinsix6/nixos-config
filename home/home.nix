@@ -63,6 +63,9 @@
     bruno
     starship
     tree
+    deskflow
+    ngrok
+    gh
   ];
   
   # Home manage Version
