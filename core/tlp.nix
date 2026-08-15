@@ -2,7 +2,7 @@
 
 {
   services.tlp = {
-      enable = true;
+      enable = false;
       settings = {
 	  CPU_SCALING_GOVERNOR_ON_AC = "schedutil";
 	  CPU_ENERGY_PERF_POLICY_ON_AC = "balance_power";

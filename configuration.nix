@@ -162,7 +162,7 @@
   programs.fish.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.shin6 = {
+  users.users.shinsix6 = {
     isNormalUser = true;
     shell = pkgs.fish;
     description = "shinsix6";
@@ -247,7 +247,6 @@
    xorg.xinit
    xorg.libxcb
    xorg.xcbutilcursor
-   inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 
    # development
    cmake

@@ -7,8 +7,6 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ./niri.nix
-    ./niri/autostart.nix
     ./cursor.nix
     ./apps/kitty.nix
     ./apps/fuzzel.nix
@@ -18,7 +16,6 @@
     ./apps/swayidle.nix
     ./apps/ghostty.nix
     ./apps/vscode.nix
-    ./apps/noctalia.nix
     ./apps/fish.nix
   ];
 
