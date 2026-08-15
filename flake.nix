@@ -20,7 +20,7 @@
   };
  
  outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, ...}@inputs: {
-    nixosConfigurations.shin6 = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.shinsix6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [
 	    # Impor previos nixos config
