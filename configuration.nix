@@ -83,6 +83,9 @@
   # Enable the KDE Plasma DE
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+ 
+  # Enable Steam 
+  programs.steam.enable = true;
 
   # xdg portal
   xdg.portal = {
