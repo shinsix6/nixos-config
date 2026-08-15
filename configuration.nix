@@ -12,13 +12,13 @@
       ./core/tlp.nix
       ./core/networkManager.nix
       ./core/nixld.nix
+      ./core/default.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -73,33 +73,16 @@
   # Enable Polkit
   security.polkit.enable = true;
 
-  # Enable the LXQT Desktop Environment.
-  # services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.desktopManager.lxqt.enable = true;
-  # programs.labwc.enable = true;
-
   # Enable niri
-  programs.niri = {
-    enable = true;
-    package = inputs.niri.packages.${pkgs.system}.niri-unstable;
-  };
-  services.xserver.displayManager.startx.enable = true;
-  
-  # Enable greetd
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-      	command = "
-	  ${pkgs.greetd.tuigreet}/bin/tuigreet \
-          --time \
-          --remember \
-          --remember-session \
-          --sessions ${config.services.displayManager.sessionData.desktops}/share/xsessions:${config.services.displayManager.sessionData.desktops}/share/wayland-sessions";
-	user = "greeter";
-      };
-    };
-  };  
+  # programs.niri = {
+  #  enable = true;
+  #  package = inputs.niri.packages.${pkgs.system}.niri-unstable;
+  # };
+  # services.xserver.displayManager.startx.enable = true;
+
+  # Enable the KDE Plasma DE
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # xdg portal
   xdg.portal = {
@@ -137,8 +120,8 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "jp";
-    variant = "OADG109A";
+    layout = "us";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -178,23 +161,21 @@
   # Enable fish
   programs.fish.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shin6 = {
     isNormalUser = true;
     shell = pkgs.fish;
-    description = "shin6";
+    description = "shinsix6";
     extraGroups = [ "networkmanager" "wheel" "kvm" ];
     packages = with pkgs; [
+      kdePackages.kate
     #  thunderbird
     ];
   };
 
   # Allowed-user
-  nix.settings.allowed-users = [ "root" "shin6" ];
-  nix.settings.trusted-users = [ "root" "shin6" "@wheel" ];
+  nix.settings.allowed-users = [ "root" "shinsix6" ];
+  nix.settings.trusted-users = [ "root" "shinsix6" "@wheel" ];
   nix.settings = {
     accept-flake-config = true;
   };
@@ -241,7 +222,6 @@
    wget
    fuzzel
    xwayland
-   waybar
    alacritty
    yazi
    unzip
@@ -317,6 +297,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  # system.stateVersion = "25.11"; # Did you read the comment?
 
 }
