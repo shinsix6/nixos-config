@@ -92,7 +92,7 @@
   services.desktopManager.plasma6.enable = false;
  
   # Enable XFCE and LightDM 
-  services.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
   environment.xfce.excludePackages = with pkgs.xfce; [
     mousepad
   ];
