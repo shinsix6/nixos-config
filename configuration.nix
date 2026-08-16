@@ -88,24 +88,9 @@
   };
 
   # Enable the KDE Plasma DE
-  services.displayManager.sddm.enable = false;
-  services.desktopManager.plasma6.enable = false;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
  
-  # Enable XFCE and LightDM 
-  services.xserver.displayManager.lightdm.enable = true;
-  environment.xfce.excludePackages = with pkgs.xfce; [
-    mousepad
-  ];
-
-  services.xserver = {
-    desktopManager = {
-      xterm.enable = true;
-      xfce.enable = true;
-    };
-  };
-
-  services.displayManager.defaultSession = "xfce";
-
   # Enable Steam 
   programs.steam.enable = true;
 
@@ -166,6 +151,9 @@
       };
     };
   };
+
+  # Enable Blueman manager 
+  services.blueman.enable = false;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
