@@ -63,6 +63,9 @@
     deskflow
     ngrok
     gh
+    lutris
+    winetricks
+    wineWow64Packages.staging
   ];
   
   # Home manage Version

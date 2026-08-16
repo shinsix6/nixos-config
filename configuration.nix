@@ -73,17 +73,39 @@
   # Enable Polkit
   security.polkit.enable = true;
 
-  # Enable niri
-  # programs.niri = {
-  #  enable = true;
-  #  package = inputs.niri.packages.${pkgs.system}.niri-unstable;
-  # };
-  # services.xserver.displayManager.startx.enable = true;
+  # Mount NTFS 
+  fileSystems."/mnt/slixx" = {
+    device = "/dev/nvme0n1p5";
+    fsType = "ntfs3";
+    options = [
+      "rw"
+      "uid=1000"
+      "gid=100"
+      "umask=002"
+      "windows_names"
+      "nofail"
+    ];
+  };
 
   # Enable the KDE Plasma DE
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = false;
+  services.desktopManager.plasma6.enable = false;
  
+  # Enable XFCE and LightDM 
+  services.displayManager.lightdm.enable = true;
+  environment.xfce.excludePackages = with pkgs.xfce; [
+    mousepad
+  ];
+
+  services.xserver = {
+    desktopManager = {
+      xterm.enable = true;
+      xfce.enable = true;
+    };
+  };
+
+  services.displayManager.defaultSession = "xfce";
+
   # Enable Steam 
   programs.steam.enable = true;
 
@@ -204,6 +226,9 @@
   # Enable Podman
   virtualisation.podman.enable = true;
 
+  # Enable Game mode 
+  programs.gamemode.enable = true;
+
   # GPU and CPU
   hardware.cpu.amd.updateMicrocode = true;
   hardware.enableRedistributableFirmware = true;
@@ -250,6 +275,8 @@
    xorg.xinit
    xorg.libxcb
    xorg.xcbutilcursor
+   protonup-qt
+   gamescope
 
    # development
    cmake

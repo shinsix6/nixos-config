@@ -2,7 +2,7 @@
 
 {
   services.mako = {
-    enable = true;
+    enable = false;
     settings = {
       background-color = "#070707";
       text-color = "#cacaca";
