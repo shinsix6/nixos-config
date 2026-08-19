@@ -11,7 +11,7 @@
     ./apps/kitty.nix
     ./apps/fuzzel.nix
     ./apps/swaylock.nix
-    ./apps/mako.nix
+    #./apps/mako.nix
     ./apps/nvim.nix
     ./apps/swayidle.nix
     ./apps/ghostty.nix
@@ -66,6 +66,8 @@
     lutris
     winetricks
     wineWow64Packages.staging
+    palemoon-bin
+    nodejs
   ];
   
   # Home manage Version

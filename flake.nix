@@ -4,6 +4,9 @@
   inputs = {
     # Nix Official Package
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+
+    # CachyOs Kernel
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     
     # SFMono w/ patches input
     sf-mono-liga-src = {
@@ -19,14 +22,21 @@
     };
   };
  
- outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, ...}@inputs: {
+ outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, ...}@inputs: {
     nixosConfigurations.shinsix6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [
 	    # Impor previos nixos config
 	    ./configuration.nix
 	    ./core/fonts.nix
-    
+        (
+            { pkgs, ... }:
+            {
+              nixpkgs.overlays = [
+                nix-cachyos-kernel.overlays.pinned
+              ];
+            }
+        )
       ];
     };
 

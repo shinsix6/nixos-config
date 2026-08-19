@@ -15,7 +15,7 @@
       ./core/default.nix
     ];
 
-  # Bootloader.
+  # Bootloader.linuxPackages-cachyos-bore-lto-x86_64-v3;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -23,7 +23,17 @@
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";\
+
+  # Cache for cachyos-kernel
+  nix.settings = {
+    extra-substituters = [
+      "https://attic.xuyh0120.win/lantian"
+    ];
+    extra-trusted-public-keys = [
+      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+    ];
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -222,7 +232,7 @@
   hardware.enableRedistributableFirmware = true;
 
   # Kernel ver
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
 
   # Kernel param
   boot.kernelParams = [ "mem_sleep_default=deep" ];
