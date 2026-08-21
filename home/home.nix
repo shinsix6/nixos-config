@@ -35,7 +35,7 @@
     wlr-randr
     wl-mirror
     zathura
-    mako
+    #mako
     xwayland-satellite
     pavucontrol
     btop

@@ -8,6 +8,12 @@
     # CachyOs Kernel
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     
+    # SilentDDM theme 
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # SFMono w/ patches input
     sf-mono-liga-src = {
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
@@ -22,7 +28,7 @@
     };
   };
  
- outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, ...}@inputs: {
+ outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, silentSDDM, ...}@inputs: {
     nixosConfigurations.shinsix6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [

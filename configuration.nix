@@ -13,10 +13,14 @@
       ./core/networkManager.nix
       ./core/nixld.nix
       ./core/default.nix
+      ./core/sddm.nix
+      ./core/zram.nix
+      ./core/lan.nix
     ];
 
-  # Bootloader.linuxPackages-cachyos-bore-lto-x86_64-v3;
+  # Bootloader;
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.edk2-uefi-shell.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -98,7 +102,7 @@
   };
 
   # Enable the KDE Plasma DE
-  services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
  
   # Enable Steam 
@@ -192,6 +196,7 @@
     extraGroups = [ "networkmanager" "wheel" "kvm" ];
     packages = with pkgs; [
       kdePackages.kate
+      kdePackages.qtstyleplugin-kvantum
     #  thunderbird
     ];
   };
@@ -235,7 +240,10 @@
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
 
   # Kernel param
-  boot.kernelParams = [ "mem_sleep_default=deep" ];
+  boot.kernelParams = [ 
+    "mem_sleep_default=deep"
+    "pcie_aspm=off"
+  ];
 
   # Postgresql enable
   services.postgresql.enable = true;
