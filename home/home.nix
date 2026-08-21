@@ -51,7 +51,7 @@
     feh
     obs-studio
     mpv
-    filezilla
+    # filezilla
     # quickshell
     nh
     webcord
