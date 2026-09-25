@@ -25,6 +25,7 @@
   # Insecure
   nixpkgs.config = {
     permittedInsecurePackages = [
+      "electron-41.9.1"
       "electron-39.8.10"
     ];
   };
@@ -63,9 +64,9 @@
     bruno
     starship
     tree
-    deskflow
     ngrok
     gh
+    logseq
   ];
   
   # Home manage Version
