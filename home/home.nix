@@ -23,6 +23,7 @@
   nixpkgs.config = {
     permittedInsecurePackages = [
       "electron-39.8.10"
+      "electron-41.9.1"
     ];
   };
 
@@ -60,13 +61,11 @@
     bruno
     starship
     tree
-    deskflow
     ngrok
     gh
     lutris
     winetricks
     wineWow64Packages.staging
-    palemoon-bin
     nodejs
   ];
   

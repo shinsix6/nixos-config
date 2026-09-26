@@ -132,11 +132,12 @@
   # hardware
   hardware.graphics = {
     enable = true;
-    # extraPackages = with pkgs; [
-    #   intel-media-driver # i5 (Skylake/Kaby Lake)
-    #   intel-vaapi-driver # Legacy support for older apps
-    #   libvdpau-va-gl     # Helps bridge some video apps
-    # ];
+    enable32Bit = true;
+
+    extraPackages = with pkgs; [
+    intel-media-driver
+    vpl-gpu-rt
+    ];
   };
 
   # Enable graphics
@@ -240,7 +241,9 @@
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
 
   # Kernel param
-  boot.kernelParams = [ 
+  boot.kernelParams = [
+    "i915.force_probe=!9a49"
+    "xe.force_probe=9a49"
     "mem_sleep_default=deep"
     "pcie_aspm=off"
   ];
