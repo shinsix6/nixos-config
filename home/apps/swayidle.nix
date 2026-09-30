@@ -7,10 +7,10 @@
     lock = "${pkgs.swaylock}/bin/swaylock --daemonize";
 
     # niri
-    display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
+    display = status: "${pkgs.wlopm}/bin/wlopm --${status} '*'";
   in
   {
-    enable = false;
+    enable = true;
     timeouts = [
   
       {

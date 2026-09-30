@@ -11,12 +11,14 @@
     ./apps/kitty.nix
     ./apps/fuzzel.nix
     ./apps/swaylock.nix
-    #./apps/mako.nix
+    ./apps/mako.nix
     ./apps/nvim.nix
     ./apps/swayidle.nix
     ./apps/ghostty.nix
     ./apps/vscode.nix
     ./apps/fish.nix
+    ./apps/mango.nix 
+    ./apps/waybar.nix
   ];
 
   # Insecure
@@ -67,6 +69,7 @@
     winetricks
     wineWow64Packages.staging
     nodejs
+    wlopm
   ];
   
   # Home manage Version

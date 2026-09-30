@@ -1,0 +1,114 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "Roboto", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: #08080a;
+  color: #e0af68;
+}
+
+/* --- WORKSPACES / TAGS --- */
+#workspaces {
+  padding: 0 4px;
+  margin: 3px 2px;
+  background-color: transparent;
+  border-radius: 0px;
+  border: 1px solid #7aa2f7;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: #565f89;
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+/* Focused / Active Workspace Button */
+#workspaces button.active,
+#workspaces button.focused {
+  color: #ff9e3b; /* Warm Vibrant Orange */
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  color: #f7768e;
+}
+
+#workspaces button:hover {
+  color: #7dcfff;
+}
+
+#window {
+  padding: 0 12px;
+  margin: 3px 0;
+  color: #7aa2f7; /* Electric Cyan / Blue Vibe */
+  font-weight: bold;
+  background-color: transparent;
+}
+
+/* --- HIDE INACTIVE WINDOW BUTTONS (GTK3 COMPATIBLE) --- */
+#taskbar button {
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  min-height: 0;
+  font-size: 0px;
+  background: transparent;
+  border: none;
+}
+
+#taskbar button label {
+  font-size: 0px;
+}
+
+/* --- SHOW ONLY ACTIVE WINDOW BUTTON --- */
+#taskbar button.active {
+  padding: 0 12px;
+  margin: 3px 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #7dcfff; /* Electric Cyan */
+  background-color: #121319;
+  border: 1px solid #1a1b26;
+  border-radius: 6px;
+}
+
+#taskbar button.active label {
+  font-size: 13px;
+}
+
+/* --- RIGHT MODULES --- */
+#tray,
+#bluetooth,
+#wireplumber,
+#cpu,
+#memory,
+#battery,
+#clock {
+  padding: 0 7px;
+  margin: 3px 0px;
+  border: 1px solid #7aa2f7;
+}
+
+#bluetooth { color: #7aa2f7; }
+#wireplumber { color: #ff9e3b; }
+#wireplumber.muted { color: #565f89; }
+#cpu { color: #2ac3de; }
+#memory { color: #ff9e3b; }
+#battery { color: #7dcfff; }
+#clock { color: #ff9e3b; font-weight: bold; }
+
+tooltip {
+  background: #0d0e15;
+  border: 1px solid #ff9e3b;
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: #c0caf5;
+  padding: 6px;
+}

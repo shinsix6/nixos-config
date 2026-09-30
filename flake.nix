@@ -5,6 +5,20 @@
     # Nix Official Package
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
+    mangowm = {
+        url = "github:mangowm/mango";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    mangobar = {
+      url = "github:mangowm/mangobar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    waybar = {
+      url = "github:Alexays/Waybar";
+    };
+
     # CachyOs Kernel
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     
@@ -28,13 +42,14 @@
     };
   };
  
- outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, silentSDDM, ...}@inputs: {
+ outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, silentSDDM, mangowm, mangobar, waybar, ...}@inputs: {
     nixosConfigurations.shinsix6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [
-	    # Impor previos nixos config
+	    # Impor previous nixos config
 	    ./configuration.nix
 	    ./core/fonts.nix
+        inputs.mangowm.nixosModules.mango
         (
             { pkgs, ... }:
             {

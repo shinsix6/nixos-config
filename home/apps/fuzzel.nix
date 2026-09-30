@@ -2,12 +2,12 @@
 
 {
   programs.fuzzel = {
-    enable = false;
+    enable = true;
     settings = {
       colors = {
-	background = "070707ff";
+	background = "002147ff";
 	text = "e8e7d7ff";
-	border = "CFCFCFff";
+	border = "1c2741ff";
       };
 
       border = {

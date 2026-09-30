@@ -87,6 +87,9 @@
   # Enable Polkit
   security.polkit.enable = true;
 
+  # allow swaylock to check password
+  security.pam.services.swaylock = {};
+
   # Mount NTFS 
   fileSystems."/mnt/slixx" = {
     device = "/dev/nvme0n1p5";
@@ -101,9 +104,27 @@
     ];
   };
 
+  # Enable mangowm 
+  programs.mango.enable = true;
+
+  # greetd 
+  services.greetd = {
+    enable = true;
+    settings = {
+      initial_session = {
+        command = "mango";
+        user = "shinsix6";
+      };
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd mango";
+        user = "greeter";
+      };
+    };
+  };
+
   # Enable the KDE Plasma DE
   # services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = false;
  
   # Enable Steam 
   programs.steam.enable = true;
@@ -286,6 +307,8 @@
    xorg.xcbutilcursor
    protonup-qt
    gamescope
+   bluez
+   bluetui
 
    # development
    cmake

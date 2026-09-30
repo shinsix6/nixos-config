@@ -2,10 +2,10 @@
 
 {
   services.mako = {
-    enable = false;
+    enable = true;
     settings = {
-      background-color = "#070707";
-      text-color = "#cacaca";
+      background-color = "#002147";
+      text-color = "#bcd4e6";
       width = 250;
       height = 100;
       padding = 4;

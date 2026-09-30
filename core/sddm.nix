@@ -3,7 +3,7 @@
 {
   imports = [inputs.silentSDDM.nixosModules.default];
   programs.silentSDDM = {
-    enable = true;
+    enable = false;
     theme = "catppuccin-macchiato";
   };
 }
