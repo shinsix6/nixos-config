@@ -5,6 +5,13 @@
     enable = true;
     interactiveShellInit = ''
       set -g fish_greeting
+      # Load Gemini API key for OpenCode
+      if test -f ~/.config/secrets/gemini_api_key
+        set -gx GEMINI_API_KEY (cat ~/.config/secrets/gemini_api_key)
+      end 
+    '';
+    shellInit = ''
+      fish_add_path $HOME/.local/bin
     '';
 
     # Set alias

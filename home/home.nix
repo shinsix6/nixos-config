@@ -70,6 +70,9 @@
     wineWow64Packages.staging
     nodejs
     wlopm
+    linux-wifi-hotspot
+    yt-dlp
+    inputs.opencode.packages.${pkgs.system}.default
   ];
   
   # Home manage Version

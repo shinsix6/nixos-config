@@ -19,6 +19,11 @@
       url = "github:Alexays/Waybar";
     };
 
+    # OpenCode
+    opencode = {
+      url = "github:anomalyco/opencode/e3c4eb242585dcd77be1a867391b7c25fd47ce52";
+    };
+
     # CachyOs Kernel
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     
@@ -42,7 +47,7 @@
     };
   };
  
- outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, silentSDDM, mangowm, mangobar, waybar, ...}@inputs: {
+ outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, silentSDDM, mangowm, mangobar, waybar, opencode, ...}@inputs: {
     nixosConfigurations.shinsix6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [

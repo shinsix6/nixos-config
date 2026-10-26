@@ -16,6 +16,8 @@
       ./core/sddm.nix
       ./core/zram.nix
       ./core/lan.nix
+      ./core/hotspot.nix
+      ./core/stirling.nix
     ];
 
   # Bootloader;

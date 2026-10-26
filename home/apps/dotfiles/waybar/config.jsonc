@@ -11,6 +11,7 @@
   "modules-center": ["mango/window"],
   "modules-right": [
     "tray",
+    "idle_inhibitor",
     "bluetooth",
     "wireplumber",
     "cpu",
@@ -46,6 +47,17 @@
   "tray": {
     "icon-size": 16,
     "spacing": 10
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰅶",   // Coffee cup / active caffeine icon
+      "deactivated": "󰾪" // Dimmed / inactive icon
+    },
+    "tooltip": true,
+    "tooltip-format-activated": "Caffeine: Active (Screen awake)",
+    "tooltip-format-deactivated": "Caffeine: Inactive"
   },
 
   "bluetooth": {

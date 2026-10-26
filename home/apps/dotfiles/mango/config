@@ -3,6 +3,10 @@
 # Auto-start
 exec-once=waybar
 exec=swayidle -w
+exec=awww-daemon
+exec-once=awww img ~/wallpaper/1407481.png
+exec_once=wl-paste --type text --watch cliphist store
+exec_once=wl-paste --type image --watch cliphist store
 
 # Window effect
 blur=1 
@@ -39,7 +43,7 @@ animations=1
 layer_animations=1
 animation_type_open=zoom
 animation_type_close=none
-animation_fade_in=1
+animation_fade_in=0
 animation_fade_out=1
 tag_animation_direction=1
 zoom_initial_ratio=0.4
@@ -75,6 +79,7 @@ default_mfact=0.55
 default_nmaster=1
 tag_num=9
 smartgaps=0
+tag_gather=1
 
 # Dwindle Layout Setting
 dwindle_smart_split=0
@@ -136,11 +141,11 @@ mouse_natural_scrolling=0
 # Appearance
 gappih=5
 gappiv=5
-gappoh=10
-gappov=10
+gappoh=5
+gappov=5
 scratchpad_width_ratio=0.8
 scratchpad_height_ratio=0.9
-borderpx=4
+borderpx=2
 rootcolor=0x201b14ff
 bordercolor=0x1c2841ff
 dropcolor=0x8FBA7C55
@@ -229,15 +234,15 @@ bind=CTRL,Right,viewtoright_have_client,0
 bind=CTRL+SUPER,Left,tagtoleft,0
 bind=CTRL+SUPER,Right,tagtoright,0
 
-bind=Ctrl,1,view,1,0
-bind=Ctrl,2,view,2,0
-bind=Ctrl,3,view,3,0
-bind=Ctrl,4,view,4,0
-bind=Ctrl,5,view,5,0
-bind=Ctrl,6,view,6,0
-bind=Ctrl,7,view,7,0
-bind=Ctrl,8,view,8,0
-bind=Ctrl,9,view,9,0
+bind=SUPER,1,view,1,0
+bind=SUPER,2,view,2,0
+bind=SUPER,3,view,3,0
+bind=SUPER,4,view,4,0
+bind=SUPER,5,view,5,0
+bind=SUPER,6,view,6,0
+bind=SUPER,7,view,7,0
+bind=SUPER,8,view,8,0
+bind=SUPE2,9,view,9,0
 
 # tag: move client to the tag and focus it
 # tagsilent: move client to the tag and not focus it
@@ -281,6 +286,16 @@ mousebind=SUPER,btn_left,moveresize,curmove
 mousebind=NONE,btn_middle,togglemaximizescreen,0
 mousebind=SUPER,btn_right,moveresize,curresize
 
+# Clipboard
+bind=SUPER,V,spawn_shell,cliphist list | fuzzel -d | cliphist decode | wl-copy
+
+# Screenshot 
+# Press Print Screen: Select a region and copy to clipboard
+bind=Print,spawn_shell,slurp | grim -g - - | wl-copy
+# Press Shift + Print Screen: Capture the entire screen to clipboard
+bind=SHIFT+Print,spawn_shell,grim - | wl-copy
+# Press Ctrl + Print Screen: Select a region and save directly to your Pictures folder
+bind=CTRL,Print,spawn_shell,slurp | grim -g - ~/Pictures/Screenshot-$(date +%s).png
 
 # Axis Bindings
 axisbind=SUPER,UP,viewtoleft_have_client
