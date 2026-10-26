@@ -4,9 +4,11 @@
 exec-once=waybar
 exec=swayidle -w
 exec=awww-daemon
-exec-once=awww img ~/wallpaper/1407481.png
-exec_once=wl-paste --type text --watch cliphist store
-exec_once=wl-paste --type image --watch cliphist store
+exec-once=xdg-dekstop-portal-wlr &
+exec-once=awww img ~/wallpaper/lain.jpg
+exec_once=wl-paste --type text --watch cliphist store &
+exec_once=wl-paste --type image --watch cliphist store &
+exec-once=wl-clip-persist --clipboard regular --reconnect-tries 0 &
 
 # Window effect
 blur=1 
@@ -279,6 +281,18 @@ bind=CTRL+ALT,Up,resizewin,+0,-50
 bind=CTRL+ALT,Down,resizewin,+0,+50
 bind=CTRL+ALT,Left,resizewin,-50,+0
 bind=CTRL+ALT,Right,resizewin,+50,+0
+
+## Brightness 
+bind=NONE,XF86MonBrightnessUp,spawn,brightnessctl s +2%
+# bind=SHIFT,XF86MonBrightnessUp,spawn,brightnessctl s 100%
+bind=NONE,XF86MonBrightnessDown,spawn,brightnessctl s 2%-
+# bind=SHIFT,XF86MonBrightnessDown,spawn,brightnessctl s 1%
+
+## Volume
+bind=NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_SINK@ 5%+
+bind=NONE,XF86AudioLowerVolume,spawn,wpctl set-volume @DEFAULT_SINK@ 5%-
+bind=NONE,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_SINK@ toggle
+# bind=SHIFT,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_SOURCE@ toggle
 
 # Mouse Button Bindings
 # btn_left and btn_right can't bind none mod key
