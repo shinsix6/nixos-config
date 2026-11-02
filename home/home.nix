@@ -21,13 +21,9 @@
     ./apps/waybar.nix
   ];
 
-  # Insecure
-  nixpkgs.config = {
-    permittedInsecurePackages = [
-      "electron-39.8.10"
-      "electron-41.9.1"
-    ];
-  };
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-41.10.7"
+  ]; 
 
   # Packages that will be installed in the user profile.
   home.packages = with pkgs; [
@@ -73,6 +69,15 @@
     linux-wifi-hotspot
     yt-dlp
     inputs.opencode.packages.${pkgs.system}.default
+    wl-clipboard
+    grim
+    slurp
+    cliphist
+    onlyoffice-desktopeditors
+    masterpdfeditor
+    tesseract
+    brave
+    inputs.ytm-player.packages.${pkgs.system}.default
   ];
   
   # Home manage Version

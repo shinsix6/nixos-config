@@ -19,6 +19,10 @@
       url = "github:Alexays/Waybar";
     };
 
+    ytm-player = {
+      url = "github:peternaame-boop/ytm-player";
+    };
+
     # OpenCode
     opencode = {
       url = "github:anomalyco/opencode/e3c4eb242585dcd77be1a867391b7c25fd47ce52";
@@ -47,7 +51,7 @@
     };
   };
  
- outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, silentSDDM, mangowm, mangobar, waybar, opencode, ...}@inputs: {
+ outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, silentSDDM, mangowm, mangobar, waybar, opencode, ytm-player, ...}@inputs: {
     nixosConfigurations.shinsix6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [

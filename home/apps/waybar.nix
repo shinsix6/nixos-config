@@ -6,7 +6,9 @@ in
 {
   programs.waybar = {
     enable = true;
-    package = inputs.waybar.packages.${pkgs.system}.waybar;
+    package = inputs.waybar.packages.${pkgs.system}.waybar.overrideAttrs(oldAttrs: { 
+      mesonFlags = (oldAttrs.mesonFlags or[]) ++ ["-Dcava=disabled"]; 
+    });
   };
 
   xdg.configFile."waybar".source = 

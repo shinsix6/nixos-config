@@ -5,17 +5,20 @@
   "spacing": 2,
 
   "margin-top": 1,
+  "reload_style_on_change": true,
 
   // --- LAYOUT ARRANGEMENT ---
-  "modules-left": ["mango/workspaces"],
+  "modules-left": [
+      "mango/workspaces",  
+      "cpu",
+      "memory"
+  ],
   "modules-center": ["mango/window"],
   "modules-right": [
     "tray",
     "idle_inhibitor",
     "bluetooth",
     "wireplumber",
-    "cpu",
-    "memory",
     "battery",
     "clock"
   ],
@@ -27,7 +30,21 @@
       "hide-empty": true,
       "on-click": "activate",
       "on-click-right": "toggle",
-      "overview-label": "OVERVIEW"
+      "overview-label": "OVERVIEW",
+      "icon-size": 16,
+      "format-icons": {
+          "active": "꥟",
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
+      }
   },
 
   // MIDDLE: Active Window Taskbar / Title
@@ -45,7 +62,7 @@
   },
 
   "tray": {
-    "icon-size": 16,
+    "icon-size": 14,
     "spacing": 10
   },
 

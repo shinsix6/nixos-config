@@ -32,12 +32,23 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";\
 
   # Cache for cachyos-kernel
+  # nix.settings = {
+  #   extra-substituters = [
+  #     "https://attic.xuyh0120.win/lantian"
+  #   ];
+  #   extra-trusted-public-keys = [
+  #     "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+  #   ];
+  # };
+
   nix.settings = {
-    extra-substituters = [
-      "https://attic.xuyh0120.win/lantian"
+    substituters = [ 
+      "https://cache.lantian.pub/lantian"
+      "https://cache.xinux.uz"
     ];
-    extra-trusted-public-keys = [
-      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+    trusted-public-keys = [ 
+      "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="
+      "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
     ];
   };
 

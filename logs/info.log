@@ -1,0 +1,82 @@
+2026-10-22 19:17:47,327 INFO s.s.S.SPDFApplication [main] Additional features in jar
+2026-10-22 19:17:47,328 INFO s.s.c.c.ConfigInitializer [main] Current settings file line count: 0
+2026-10-22 19:17:47,332 INFO s.s.c.c.ConfigInitializer [main] Created settings file from template
+2026-10-22 19:17:47,333 INFO s.s.c.c.ConfigInitializer [main] Created custom_settings file: ./configs/custom_settings.yml
+2026-10-22 19:17:47,333 INFO s.s.S.SPDFApplication [main] Settings file: ./configs/settings.yml
+2026-10-22 19:17:47,333 INFO s.s.S.SPDFApplication [main] Custom settings file: ./configs/custom_settings.yml
+2026-10-22 19:17:47,987 INFO s.s.S.SPDFApplication [main] Starting SPDFApplication v2.14.3 using Java 25.0.4.1 with PID 3327289 (/nix/store/7cj9spa5lkjdcrv15dqy0bzq2wbdxkky-stirling-pdf-2.14.3/share/stirling-pdf/Stirling-PDF.jar started by shinsix6 in /home/shinsix6/nixos-config)
+2026-10-22 19:17:47,988 INFO s.s.S.SPDFApplication [main] The following 1 profile is active: "security"
+2026-10-22 19:17:52,517 INFO s.s.S.c.MultipartConfiguration [main] Using default multipart file upload limit: 2000MB
+2026-10-22 19:17:53,922 INFO s.s.p.s.c.DatabaseConfig [main] Using default H2 database
+2026-10-22 19:17:59,548 INFO s.s.p.s.s.KeyPersistenceService [main] No existing keys found in directory, generating new keypair
+2026-10-22 19:17:59,961 INFO s.s.p.s.s.KeyPersistenceService [main] Generated and stored new JWT keypair: jwt-key-2026-10-22-191759
+2026-10-22 19:18:00,193 INFO s.s.p.s.s.DatabaseService [main] Source directory does not exist: configs/db/backup
+2026-10-22 19:18:01,207 INFO s.s.c.c.RuntimePathConfig [main] Registered watched folder path: /home/shinsix6/nixos-config/pipeline/watchedFolders
+2026-10-22 19:18:01,207 INFO s.s.c.c.RuntimePathConfig [main] Using Tesseract data path: /usr/share/tesseract-ocr/5/tessdata
+2026-10-22 19:18:01,314 WARN s.s.S.c.ExternalAppDepConfig [virtual-53] Missing dependency: rar - Disabling group: rar (Affected features: PDF To Cbr)
+2026-10-22 19:18:01,314 WARN s.s.S.c.ExternalAppDepConfig [virtual-68] Missing dependency: gs - Disabling group: Ghostscript (Affected features: Replace Invert PDF, Repair, Compress PDF, Scanner Effect, Vector To PDF, PDF To Vector, Crop)
+2026-10-22 19:18:01,314 WARN s.s.S.c.ExternalAppDepConfig [virtual-64] Missing dependency: weasyprint - Disabling group: Weasyprint (Affected features: Eml To PDF, Markdown To PDF, Url To PDF, Html To PDF)
+2026-10-22 19:18:01,314 WARN s.s.S.c.ExternalAppDepConfig [virtual-58] Missing dependency: ocrmypdf - Disabling group: OCRmyPDF (Affected features: Ocr PDF)
+2026-10-22 19:18:01,314 WARN s.s.S.c.ExternalAppDepConfig [virtual-61] Missing dependency: qpdf - Disabling group: qpdf (Affected features: Repair, Compress PDF)
+2026-10-22 19:18:01,314 WARN s.s.S.c.ExternalAppDepConfig [virtual-65] Missing dependency: pdftohtml - Disabling group: Pdftohtml (Affected features: PDF To Html, PDF To Markdown)
+2026-10-22 19:18:01,333 WARN s.s.S.c.ExternalAppDepConfig [virtual-70] Missing dependency: unoconvert - Disabling group: Unoconvert (Affected features: File To PDF)
+2026-10-22 19:18:01,336 WARN s.s.S.c.ExternalAppDepConfig [virtual-69] Missing dependency: soffice - Disabling group: LibreOffice (Affected features: File To PDF, PDF To Xml, PDF To Presentation, PDF To Pdfa, PDF To Word, PDF To Rtf, PDF To Html)
+2026-10-22 19:18:01,347 WARN s.s.S.c.ExternalAppDepConfig [virtual-71] Missing dependency: ebook-convert - Disabling group: Calibre (Affected features: PDF To Epub)
+2026-10-22 19:18:01,411 WARN s.s.S.c.ExternalAppDepConfig [main] Missing dependency: Python (reason: Python interpreter not found on PATH) - Disabling Python features: File To PDF, Url To PDF, Html To PDF, Extract Image Scans and OpenCV features: Extract Image Scans
+2026-10-22 19:18:01,422 INFO s.s.S.c.EndpointConfiguration [main] Disabled tool groups: Calibre, Ghostscript, LibreOffice, OCRmyPDF, OpenCV, Pdftohtml, Python, Unoconvert, Weasyprint, qpdf, rar (endpoints may have alternative implementations)
+2026-10-22 19:18:01,422 INFO s.s.S.c.EndpointConfiguration [main] Disabled functional groups: enterprise
+2026-10-22 19:18:01,422 INFO s.s.S.c.EndpointConfiguration [main] Total disabled endpoints: 19. Disabled endpoints: eml-to-pdf, extract-image-scans, file-to-pdf, html-to-pdf, pdf-to-cbr, pdf-to-epub, pdf-to-html, pdf-to-markdown, pdf-to-pdfa, pdf-to-presentation, pdf-to-rtf, pdf-to-vector, pdf-to-word, pdf-to-xml, repair, replace-invert-pdf, scanner-effect, url-to-pdf, vector-to-pdf
+2026-10-22 19:18:01,895 INFO s.s.c.c.i.InProcessClusterConfiguration [main] Cluster backplane: in-process (single node)
+2026-10-22 19:18:01,913 INFO s.s.S.s.PdfJsonFallbackFontService [main] Using fallback font location: classpath:/static/fonts/NotoSans-Regular.ttf
+2026-10-22 19:18:01,917 INFO s.s.S.s.p.PdfJsonFontService [main] [FONT-DEBUG] CFF conversion enabled, checking tool availability...
+2026-10-22 19:18:01,937 WARN s.s.S.s.p.PdfJsonFontService [main] [FONT-DEBUG] Python command '/opt/venv/bin/python3' not found; Python CFF conversion disabled
+2026-10-22 19:18:01,964 WARN s.s.S.s.p.PdfJsonFontService [main] [FONT-DEBUG] FontForge command 'fontforge' not found; FontForge CFF conversion disabled
+2026-10-22 19:18:01,964 INFO s.s.S.s.p.PdfJsonFontService [main] [FONT-DEBUG] Selected CFF converter method: python
+2026-10-22 19:18:02,774 INFO s.s.S.s.p.t.l.Type3FontLibrary [main] [TYPE3] Loaded 61 Type3 library entries (signatures=81, aliases=64) from classpath:/type3/library/index.json
+2026-10-22 19:18:02,985 INFO s.s.S.s.VeraPDFService [main] VeraPDF Greenfield initialized successfully
+2026-10-22 19:18:03,182 INFO s.s.c.s.MobileScannerService [main] Mobile scanner temp directory: /tmp/stirling-mobile-scanner
+2026-10-22 19:18:03,372 INFO s.s.S.s.CertificateValidationService [main] Loading certificates from Java system trust store
+2026-10-22 19:18:03,392 INFO s.s.S.s.CertificateValidationService [main] Loaded 110 CA certificates from Java system trust store
+2026-10-22 19:18:03,392 INFO s.s.S.s.CertificateValidationService [main] Loading bundled Mozilla CA certificates from resources
+2026-10-22 19:18:03,416 INFO s.s.S.c.w.ReactRoutingController [main] Static files custom path: ./customFiles/static/
+2026-10-22 19:18:03,495 INFO s.s.c.s.TempFileCleanupService [main] Running in Server-jar mode, using conservative cleanup strategy
+2026-10-22 19:18:03,497 INFO s.s.c.s.TempFileCleanupService [main] Startup cleanup complete. Deleted 0 temporary files/directories
+2026-10-22 19:18:03,528 INFO s.s.c.u.FileMonitor [main] Monitoring directory: /home/shinsix6/nixos-config/pipeline/watchedFolders
+2026-10-22 19:18:04,315 INFO s.s.p.s.s.UserService [main] MFA required set to true for user admin {mfaEnabled=false, mfaRequired=false}
+2026-10-22 19:18:04,335 INFO s.s.p.s.s.DatabaseService [main] Database export completed: configs/backup/db/backup_202610221918.sql
+2026-10-22 19:18:04,337 INFO s.s.p.s.s.DatabaseService [main] Checksum for backup_202610221918.sql: afdb40b7d98e90e80891ed166f4aa69ec2e9038a1877549505421c25ac76f5c0
+2026-10-22 19:18:04,371 INFO s.s.p.s.InitialSecuritySetup [main] Default admin user created: admin
+2026-10-22 19:18:04,449 INFO s.s.p.s.s.UserService [main] MFA required set to true for user STIRLING-PDF-BACKEND-API-USER {mfaEnabled=false, mfaRequired=false}
+2026-10-22 19:18:04,463 INFO s.s.p.s.s.DatabaseService [main] Database export completed: configs/backup/db/backup_202610221918.sql
+2026-10-22 19:18:04,464 INFO s.s.p.s.s.DatabaseService [main] Checksum for backup_202610221918.sql: 8b207d1d5eafa57cbc0affb0790ffbdd61d3b6d536485e0b16773c5934179cd5
+2026-10-22 19:18:04,541 INFO s.s.p.s.s.DatabaseService [main] Database export completed: configs/backup/db/backup_202610221918.sql
+2026-10-22 19:18:04,541 INFO s.s.p.s.s.DatabaseService [main] Checksum for backup_202610221918.sql: d98b2c0b52dd0d4fd430cdbeb48fe3733cc493a895317fc4ffe8b047002a4179
+2026-10-22 19:18:04,561 INFO s.s.p.s.InitialSecuritySetup [main] Internal API user created: STIRLING-PDF-BACKEND-API-USER
+2026-10-22 19:18:04,575 INFO s.s.p.s.UserLicenseSettingsService [main] Initializing user license settings
+2026-10-22 19:18:04,583 INFO s.s.p.s.UserLicenseSettingsService [main] Existing installation detected. Grandfathering 5 users (current: 1, minimum: 5)
+2026-10-22 19:18:04,584 WARN s.s.p.s.UserLicenseSettingsService [main] GRANDFATHERING LOCKED: 5 users. This value can never be changed.
+2026-10-22 19:18:04,589 INFO s.s.p.s.UserLicenseSettingsService [main] License check result: type=NORMAL, requiresPaid=true, hasPaid=false
+2026-10-22 19:18:05,371 INFO s.s.p.s.c.SecurityConfiguration [main] No CORS allowed origins configured in settings.yml (system.corsAllowedOrigins); allowing all origins.
+2026-10-22 19:18:06,654 INFO s.s.c.s.JobQueue [main] Starting JobQueue lifecycle
+2026-10-22 19:18:06,678 INFO s.s.c.s.JobQueue [main] Stopping JobQueue lifecycle
+2026-10-22 19:18:06,678 INFO s.s.c.s.JobQueue [main] Shutting down job queue
+2026-10-22 19:18:06,678 INFO s.s.c.s.JobQueue [main] Job queue shutdown complete. Stats: total=0, rejected=0
+2026-10-22 19:18:06,678 WARN o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-10-22 19:18:06,687 INFO s.s.c.c.TempFileShutdownHook [main] Application shutting down, cleaning up temporary files
+2026-10-22 19:18:06,687 INFO s.s.c.c.TempFileShutdownHook [main] Shutdown cleanup complete. Deleted 0 temporary files/directories
+2026-10-22 19:18:06,687 INFO s.s.c.s.ResourceMonitor [main] Shutting down resource monitoring
+2026-10-22 19:18:06,688 INFO s.s.c.s.TaskManager [main] Shutting down job result cleanup executor
+2026-10-22 19:18:06,753 ERROR o.s.b.d.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

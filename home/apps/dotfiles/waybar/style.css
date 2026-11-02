@@ -9,20 +9,23 @@
 window#waybar {
   background-color: #08080a;
   color: #e0af68;
+  border: 2px solid #126180;
+  padding: 2px;
 }
 
 /* --- WORKSPACES / TAGS --- */
 #workspaces {
-  padding: 0 4px;
-  margin: 3px 2px;
+  font-weight: bold;
+  padding: 0px 2px;
   background-color: transparent;
   border-radius: 0px;
   border: 1px solid #7aa2f7;
+  border-width: 0px 0px 0px 0px;
 }
 
 #workspaces button {
   padding: 0 8px;
-  color: #565f89;
+  color: #4a8dca;
   background-color: transparent;
   border-radius: 0px;
 }
@@ -30,7 +33,7 @@ window#waybar {
 /* Focused / Active Workspace Button */
 #workspaces button.active,
 #workspaces button.focused {
-  color: #ff9e3b; /* Warm Vibrant Orange */
+  color: #efae21; /* Warm Vibrant Orange */
   font-weight: bold;
 }
 
@@ -40,14 +43,17 @@ window#waybar {
 
 #workspaces button:hover {
   color: #7dcfff;
+  background: transparent;
 }
 
 #window {
   padding: 0 12px;
   margin: 3px 0;
-  color: #7aa2f7; /* Electric Cyan / Blue Vibe */
+  color: #4a8dca; /* Electric Cyan / Blue Vibe */
   font-weight: bold;
   background-color: transparent;
+  border: 1px solid #4a8dca;
+  border-width: 0px 1px 0px 1px;
 }
 
 /* --- HIDE INACTIVE WINDOW BUTTONS (GTK3 COMPATIBLE) --- */
@@ -74,6 +80,7 @@ window#waybar {
   color: #7dcfff; /* Electric Cyan */
   background-color: #121319;
   border: 1px solid #1a1b26;
+  border-width: 0px 1px 0px 1px;
   border-radius: 6px;
 }
 
@@ -86,14 +93,14 @@ window#waybar {
   padding: 0 10px;
   margin: 3px 2px;
   background-color: #121319;
-  border: 1px solid #7aa2f7;
+  border: 1px solid #126180;
+  border-width: 0px 0px 0px 1px;
   border-radius: 0px;
   color: #565f89; /* Inactive color */
 }
 
 #idle_inhibitor.activated {
-  color: #ff9e3b; /* Orange accent when active */
-  border: 1px solid #ff9e3b;
+  color: #efae21; /* Orange accent when active */
 }
 
 #tray,
@@ -105,20 +112,27 @@ window#waybar {
 #clock {
   padding: 0 7px;
   margin: 3px 0px;
-  border: 1px solid #7aa2f7;
+  border: 1px solid #126180;
+  border-width: 0px 0px 0px 1px;
 }
 
-#bluetooth { color: #7aa2f7; }
-#wireplumber { color: #ff9e3b; }
+#memory {
+    border-width: 0px 1px 0px 1px;
+}
+
+#tray menu { color: #4a8dca; }
+#bluetooth { color: #4a8dca; }
+#wireplumber { color: #efae21; }
 #wireplumber.muted { color: #565f89; }
-#cpu { color: #2ac3de; }
-#memory { color: #ff9e3b; }
-#battery { color: #7dcfff; }
-#clock { color: #ff9e3b; font-weight: bold; }
+#cpu { color: #4a8dca; }
+#memory { color: #efae21; }
+#battery { color: #4a8dca; }
+#clock { color: #efae21; font-weight: bold; }
 
 tooltip {
   background: #0d0e15;
-  border: 1px solid #ff9e3b;
+  border: 1px solid #efae21;
+  border-width: 0px 1px 0px 1px;
   border-radius: 8px;
 }
 

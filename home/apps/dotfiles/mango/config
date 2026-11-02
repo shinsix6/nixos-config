@@ -9,6 +9,7 @@ exec-once=awww img ~/wallpaper/lain.jpg
 exec_once=wl-paste --type text --watch cliphist store &
 exec_once=wl-paste --type image --watch cliphist store &
 exec-once=wl-clip-persist --clipboard regular --reconnect-tries 0 &
+exec=mako
 
 # Window effect
 blur=1 
