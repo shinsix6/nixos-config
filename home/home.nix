@@ -67,6 +67,7 @@
     ngrok
     gh
     logseq
+    arandr
   ];
   
   # Home manage Version
