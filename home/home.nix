@@ -1,8 +1,8 @@
 { config, pkgs, inputs, ...}:
 
 {
-  home.username = "shin6";
-  home.homeDirectory = "/home/shin6";
+  home.username = "shinsix6";
+  home.homeDirectory = "/home/shinsix6";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -64,7 +64,7 @@
     bruno
     starship
     tree
-    ngrok
+    # ngrok
     gh
     logseq
     arandr

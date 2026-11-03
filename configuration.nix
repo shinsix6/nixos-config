@@ -115,7 +115,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/shin6/nixos-config/";
+    flake = "/home/shinsix6/nixos-config/";
   };
 
   # environment.sessionVariables = {
@@ -182,10 +182,10 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.shin6 = {
+  users.users.shinsix6 = {
     isNormalUser = true;
     shell = pkgs.fish;
-    description = "shin6";
+    description = "shinsix6";
     extraGroups = [ "networkmanager" "wheel" "kvm" ];
     packages = with pkgs; [
     #  thunderbird
@@ -193,8 +193,8 @@
   };
 
   # Allowed-user
-  nix.settings.allowed-users = [ "root" "shin6" ];
-  nix.settings.trusted-users = [ "root" "shin6" "@wheel" ];
+  nix.settings.allowed-users = [ "root" "shinsix6" ];
+  nix.settings.trusted-users = [ "root" "shinsix6" "@wheel" ];
   nix.settings = {
     accept-flake-config = true;
   };

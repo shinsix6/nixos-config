@@ -54,7 +54,7 @@
   };
  
  outputs = {self, nixpkgs, home-manager, niri, niri-fork, sf-mono-liga-src, noctalia, ...}@inputs: {
-    nixosConfigurations.shin6 = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.shinsix6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [
 	    # Impor previos nixos config
@@ -66,7 +66,7 @@
       ];
     };
 
-    homeConfigurations."shin6" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."shinsix6" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       extraSpecialArgs = { inherit inputs; };
       modules = [ 
