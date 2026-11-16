@@ -19,6 +19,7 @@
     ./apps/fish.nix
     ./apps/mango.nix 
     ./apps/waybar.nix
+    ./apps/artcraft.nix
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -77,9 +78,11 @@
     masterpdfeditor
     tesseract
     brave
+    zenity
     inputs.ytm-player.packages.${pkgs.system}.default
+    # inputs.artcraft.packages.${pkgs.system}.default
   ];
-  
+
   # Home manage Version
   home.stateVersion = "25.11";
 }

@@ -18,6 +18,7 @@
       ./core/lan.nix
       ./core/hotspot.nix
       ./core/stirling.nix
+      ./core/flatpak.nix
     ];
 
   # Bootloader;
@@ -52,6 +53,23 @@
     ];
   };
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      wayland
+      libxkbcommon
+      libGL
+      fontconfig
+      freetype
+      stdenv.cc.cc.lib
+      xorg.libX11
+      xorg.libXcursor
+      xorg.libXi
+      xorg.libXrandr
+    ];
+  };
+  programs.appimage.binfmt = true;
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -82,6 +100,9 @@
   '';
 };
  
+  # Disable Noise
+  programs.noisetorch.enable = true;
+
   # Disable man cache 
   documentation.man.generateCaches = false;
 
@@ -145,10 +166,22 @@
   # xdg portal
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
+    wlr.settings.screencast = {
+      chooser_type = "dmenu";
+      chooser_cmd = "${pkgs.fuzzel}/bin/fuzzel --dmenu";
+    };
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       xdg-desktop-portal-wlr
     ];
+    config = { 
+      common = { 
+        default = [ "wlr" "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+      };
+    };
   };
  
   # nh clean
@@ -280,6 +313,7 @@
     "xe.force_probe=9a49"
     "mem_sleep_default=deep"
     "pcie_aspm=off"
+    "split_lock_detect=off"
   ];
 
   # Postgresql enable

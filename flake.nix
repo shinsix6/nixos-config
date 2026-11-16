@@ -23,6 +23,11 @@
       url = "github:peternaame-boop/ytm-player";
     };
 
+    # Artcraft Launcher
+    artcraft = {
+      url = "github:ipeglin/artcraft-nix";
+    };
+
     # OpenCode
     opencode = {
       url = "github:anomalyco/opencode/e3c4eb242585dcd77be1a867391b7c25fd47ce52";
@@ -51,7 +56,7 @@
     };
   };
  
- outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, silentSDDM, mangowm, mangobar, waybar, opencode, ytm-player, ...}@inputs: {
+ outputs = {self, nixpkgs, home-manager, sf-mono-liga-src, nix-cachyos-kernel, silentSDDM, mangowm, mangobar, waybar, opencode, ytm-player, artcraft, ...}@inputs: {
     nixosConfigurations.shinsix6 = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [
