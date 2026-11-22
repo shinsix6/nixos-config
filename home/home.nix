@@ -79,7 +79,7 @@
     tesseract
     brave
     zenity
-    inputs.ytm-player.packages.${pkgs.system}.default
+    # inputs.ytm-player.packages.${pkgs.system}.default
     # inputs.artcraft.packages.${pkgs.system}.default
   ];
 

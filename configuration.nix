@@ -365,6 +365,8 @@
    steam-run
    maven
    pgadmin4
+   go
+   python314
 
    # PHP Setup
    php

@@ -17,5 +17,8 @@
     };
 
     # Automatically unblock Wi-Fi radio before create_ap starts
-    systemd.services.create_ap.preStart = "${pkgs.util-linux}/bin/rfkill unblock wifi";
+    systemd.services.create_ap = { 
+      preStart = "${pkgs.networkmanager}/bin/nmcli device disconnect wlan0 || true";
+      postStop = "create_ap --fix-unmanaged || true";
+    };
 }
